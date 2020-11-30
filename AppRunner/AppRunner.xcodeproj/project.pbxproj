@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500FBC5E2574E12500DB8098 /* CommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FBC5D2574E12500DB8098 /* CommandRunner.swift */; };
+		500FBC612574E22100DB8098 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FBC602574E22100DB8098 /* Command.swift */; };
+		500FBC642574E30100DB8098 /* KillXcode.command in Resources */ = {isa = PBXBuildFile; fileRef = 500FBC632574E30100DB8098 /* KillXcode.command */; };
+		500FBC692574E41900DB8098 /* ClearDerivedData.command in Resources */ = {isa = PBXBuildFile; fileRef = 500FBC672574E41900DB8098 /* ClearDerivedData.command */; };
+		500FBC6C2574E45D00DB8098 /* OpenXcode.command in Resources */ = {isa = PBXBuildFile; fileRef = 500FBC6B2574E45D00DB8098 /* OpenXcode.command */; };
+		504A20912574E7BF005FEEBE /* LogStart.command in Resources */ = {isa = PBXBuildFile; fileRef = 504A208F2574E7BF005FEEBE /* LogStart.command */; };
+		504A20922574E7BF005FEEBE /* LogEnd.command in Resources */ = {isa = PBXBuildFile; fileRef = 504A20902574E7BF005FEEBE /* LogEnd.command */; };
 		50781EF3256D89B90010864E /* AppRunnerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50781EF2256D89B90010864E /* AppRunnerAppDelegate.swift */; };
 		50781EF7256D8FAC0010864E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50781EF6256D8FAC0010864E /* MainView.swift */; };
 		50781EFC256D99DE0010864E /* RunScript.command in Resources */ = {isa = PBXBuildFile; fileRef = 50781EFB256D99DE0010864E /* RunScript.command */; };
@@ -16,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500FBC5D2574E12500DB8098 /* CommandRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandRunner.swift; sourceTree = "<group>"; };
+		500FBC602574E22100DB8098 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		500FBC632574E30100DB8098 /* KillXcode.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = KillXcode.command; sourceTree = "<group>"; };
+		500FBC672574E41900DB8098 /* ClearDerivedData.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ClearDerivedData.command; sourceTree = "<group>"; };
+		500FBC6B2574E45D00DB8098 /* OpenXcode.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = OpenXcode.command; sourceTree = "<group>"; };
+		504A208F2574E7BF005FEEBE /* LogStart.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = LogStart.command; sourceTree = "<group>"; };
+		504A20902574E7BF005FEEBE /* LogEnd.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = LogEnd.command; sourceTree = "<group>"; };
 		50781EF2256D89B90010864E /* AppRunnerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRunnerAppDelegate.swift; sourceTree = "<group>"; };
 		50781EF6256D8FAC0010864E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		50781EFB256D99DE0010864E /* RunScript.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunScript.command; sourceTree = "<group>"; };
@@ -57,9 +71,16 @@
 		50AF305E256D7E0100AC431E /* AppRunner */ = {
 			isa = PBXGroup;
 			children = (
+				504A20902574E7BF005FEEBE /* LogEnd.command */,
+				504A208F2574E7BF005FEEBE /* LogStart.command */,
+				500FBC672574E41900DB8098 /* ClearDerivedData.command */,
+				500FBC632574E30100DB8098 /* KillXcode.command */,
+				500FBC6B2574E45D00DB8098 /* OpenXcode.command */,
 				50781EFB256D99DE0010864E /* RunScript.command */,
 				50781EF2256D89B90010864E /* AppRunnerAppDelegate.swift */,
 				50781EF6256D8FAC0010864E /* MainView.swift */,
+				500FBC5D2574E12500DB8098 /* CommandRunner.swift */,
+				500FBC602574E22100DB8098 /* Command.swift */,
 				50AF3063256D7E0100AC431E /* Assets.xcassets */,
 				50AF3068256D7E0100AC431E /* Main.storyboard */,
 				50AF306B256D7E0100AC431E /* Info.plist */,
@@ -138,7 +159,12 @@
 				50781EFC256D99DE0010864E /* RunScript.command in Resources */,
 				50AF306A256D7E0100AC431E /* Main.storyboard in Resources */,
 				50AF3067256D7E0100AC431E /* Preview Assets.xcassets in Resources */,
+				504A20922574E7BF005FEEBE /* LogEnd.command in Resources */,
 				50AF3064256D7E0100AC431E /* Assets.xcassets in Resources */,
+				500FBC642574E30100DB8098 /* KillXcode.command in Resources */,
+				504A20912574E7BF005FEEBE /* LogStart.command in Resources */,
+				500FBC6C2574E45D00DB8098 /* OpenXcode.command in Resources */,
+				500FBC692574E41900DB8098 /* ClearDerivedData.command in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +176,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50781EF3256D89B90010864E /* AppRunnerAppDelegate.swift in Sources */,
+				500FBC5E2574E12500DB8098 /* CommandRunner.swift in Sources */,
 				50781EF7256D8FAC0010864E /* MainView.swift in Sources */,
+				500FBC612574E22100DB8098 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,8 @@
 //
-//  📝MainView.swift
+//  📝Command.swift
 //  🗄️AppRunner
 //
-//  Created🗜️ by Yurii Boiko👨‍💻 on 24.11.2020🗓️.
+//  Created🗜️ by Yurii Boiko👨‍💻 on 30.11.2020🗓️.
 //
 //
 //  Copyright (c) 2020 Yurii Boiko
@@ -25,38 +25,38 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
      
-import SwiftUI
 
-struct MainView: View {
-    @State private var isRunning = false
-    @State private var commands = Command.standartList
-    
-    var body: some View {
-        VStack {
-            Text("AppRunner")
-                .font(.largeTitle)
-                .padding()
-            Text("Lets you run lots of great stuff for app development")
-                .font(.body)
-                .padding()
-            Button(action: { runAllCommands() }) {
-                Text("Run!")
-            }
-            .disabled(isRunning)
-            .padding(.trailing)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+import Foundation
+
+struct Command {
+    let path: String
+    let shouldExecute: Bool
+}
+
+extension Command {
+    static var logStart: Self {
+        Command(path: "LogStart", shouldExecute: true)
     }
     
-    private func runAllCommands() {
-        isRunning = true
-        CommandRunner(commands: commands)
-            .run { isRunning = false }
+    static var logEnd: Self {
+        Command(path: "LogEnd", shouldExecute: true)
+    }
+    
+    static var killXcode: Self {
+        Command(path: "KillXcode", shouldExecute: true)
+    }
+    
+    static var openXcode: Self {
+        Command(path: "OpenXcode", shouldExecute: true)
+    }
+    
+    static var clearDerivedData: Self {
+        Command(path: "ClearDerivedData", shouldExecute: true)
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
+extension Command {
+    static var standartList: [Command] {
+        [logStart, killXcode, clearDerivedData, openXcode, logEnd]
     }
 }
