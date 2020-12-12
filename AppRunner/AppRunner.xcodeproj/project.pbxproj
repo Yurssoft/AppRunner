@@ -52,6 +52,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50A5F5D9258485A5009B2572 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				504A20902574E7BF005FEEBE /* LogEnd.command */,
+				504A208F2574E7BF005FEEBE /* LogStart.command */,
+				500FBC672574E41900DB8098 /* ClearDerivedData.command */,
+				500FBC632574E30100DB8098 /* KillXcode.command */,
+				500FBC6B2574E45D00DB8098 /* OpenXcode.command */,
+				50781EFB256D99DE0010864E /* RunScript.command */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		50A5F5DA258485DA009B2572 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50781EF6256D8FAC0010864E /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50A5F5DC258485E2009B2572 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				500FBC5D2574E12500DB8098 /* CommandRunner.swift */,
+				500FBC602574E22100DB8098 /* Command.swift */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		50A5F5DE258485EE009B2572 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				50AF3063256D7E0100AC431E /* Assets.xcassets */,
+				50AF3068256D7E0100AC431E /* Main.storyboard */,
+				50AF306B256D7E0100AC431E /* Info.plist */,
+				50AF306C256D7E0100AC431E /* AppRunner.entitlements */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		50A5F5E325848627009B2572 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				50781EF2256D89B90010864E /* AppRunnerAppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		50AF3053256D7E0100AC431E = {
 			isa = PBXGroup;
 			children = (
@@ -71,21 +120,12 @@
 		50AF305E256D7E0100AC431E /* AppRunner */ = {
 			isa = PBXGroup;
 			children = (
-				504A20902574E7BF005FEEBE /* LogEnd.command */,
-				504A208F2574E7BF005FEEBE /* LogStart.command */,
-				500FBC672574E41900DB8098 /* ClearDerivedData.command */,
-				500FBC632574E30100DB8098 /* KillXcode.command */,
-				500FBC6B2574E45D00DB8098 /* OpenXcode.command */,
-				50781EFB256D99DE0010864E /* RunScript.command */,
-				50781EF2256D89B90010864E /* AppRunnerAppDelegate.swift */,
-				50781EF6256D8FAC0010864E /* MainView.swift */,
-				500FBC5D2574E12500DB8098 /* CommandRunner.swift */,
-				500FBC602574E22100DB8098 /* Command.swift */,
-				50AF3063256D7E0100AC431E /* Assets.xcassets */,
-				50AF3068256D7E0100AC431E /* Main.storyboard */,
-				50AF306B256D7E0100AC431E /* Info.plist */,
-				50AF306C256D7E0100AC431E /* AppRunner.entitlements */,
+				50A5F5D9258485A5009B2572 /* Commands */,
+				50A5F5DA258485DA009B2572 /* View */,
+				50A5F5DC258485E2009B2572 /* Command */,
+				50A5F5DE258485EE009B2572 /* Support Files */,
 				50AF3065256D7E0100AC431E /* Preview Content */,
+				50A5F5E325848627009B2572 /* Application */,
 			);
 			path = AppRunner;
 			sourceTree = "<group>";
@@ -316,19 +356,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AppRunner/AppRunner.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "AppRunner/Support Files/AppRunner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"AppRunner/Preview Content\"";
 				DEVELOPMENT_TEAM = 9GXW8252L9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AppRunner/Info.plist;
+				INFOPLIST_FILE = "AppRunner/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yurrssoft.AppRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -340,19 +380,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AppRunner/AppRunner.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "AppRunner/Support Files/AppRunner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"AppRunner/Preview Content\"";
 				DEVELOPMENT_TEAM = 9GXW8252L9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AppRunner/Info.plist;
+				INFOPLIST_FILE = "AppRunner/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yurrssoft.AppRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

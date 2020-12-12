@@ -27,9 +27,11 @@
      
 
 import Foundation
+import os
 
 struct CommandRunner {
     let commands: [Command]
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "\(CommandRunner.self)")
     
     func run(completion: @escaping (() -> Void)) {
         let filtered = commands.filter { $0.shouldExecute }
@@ -53,14 +55,21 @@ struct CommandRunner {
     
     private func runCommand(command: Command, completion: @escaping (() -> Void)) {
         guard let commandFilePath = Bundle.main.path(forResource: command.path, ofType:"command") else {
-            print("Unable to locate \(command.path).command")
+            logger.fault("Unable to locate \(command.path, align: .left(columns: 5), privacy: .public)")
             return
         }
         let executableURL = URL(fileURLWithPath: "/bin/sh")
-        _ = try? Process.run(executableURL,
-                             arguments: ["-c", "sh \(commandFilePath)"],
-                             terminationHandler: { _ in
-                                completion()
-                             })
+        let process = Process()
+        process.executableURL = executableURL
+        process.arguments = ["-c", "sh \(commandFilePath)"]
+        process.terminationHandler = { _ in
+            completion()
+        }
+        process.qualityOfService = .userInteractive
+        do {
+            try process.run()
+        } catch let error {
+            logger.fault("🧨 -> \(commandFilePath, align: .left(columns: 5), privacy: .public), error: \(error.localizedDescription, privacy: .public)")
+        }
     }
 }
