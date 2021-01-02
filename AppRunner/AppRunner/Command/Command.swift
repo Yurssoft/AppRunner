@@ -43,7 +43,7 @@ extension Command {
     }
     
     static var killXcode: Self {
-        Command(path: "KillXcode", shouldExecute: true)
+        Command(path: "KillXcode", shouldExecute: false)
     }
     
     static var openXcode: Self {

@@ -36,7 +36,9 @@ struct CommandRunner {
     func run(completion: @escaping (() -> Void)) {
         let filtered = commands.filter { $0.shouldExecute }
         if filtered.isEmpty {
+            logger.notice("📝 -> Empty commands, aborting....")
             completion()
+            return
         }
         runFiltered(commands: filtered) {
             completion()
@@ -54,15 +56,19 @@ struct CommandRunner {
     }
     
     private func runCommand(command: Command, completion: @escaping (() -> Void)) {
+        logger.notice("🏃‍♂️ -> Running \(command.path, align: .left(columns: 5), privacy: .public)")
         guard let commandFilePath = Bundle.main.path(forResource: command.path, ofType:"command") else {
-            logger.fault("Unable to locate \(command.path, align: .left(columns: 5), privacy: .public)")
+            logger.fault("🧨 -> Unable to locate \(command.path, align: .left(columns: 5), privacy: .public)")
             return
         }
         let executableURL = URL(fileURLWithPath: "/bin/sh")
         let process = Process()
         process.executableURL = executableURL
         process.arguments = ["-c", "sh \(commandFilePath)"]
-        process.terminationHandler = { _ in
+        process.terminationHandler = { terminatedProcess in
+            if case .uncaughtSignal = terminatedProcess.terminationReason {
+                logger.fault("🧨 -> \(commandFilePath, align: .left(columns: 5), privacy: .public), error: \(executableURL, privacy: .public)")
+            }
             completion()
         }
         process.qualityOfService = .userInteractive

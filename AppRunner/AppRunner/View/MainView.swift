@@ -26,10 +26,13 @@
 //  SOFTWARE.
      
 import SwiftUI
+import Combine
+import os
 
 struct MainView: View {
     @State private var isRunning = false
     @State private var commands = Command.standartList
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "\(MainView.self)")
     
     var body: some View {
         VStack {
@@ -49,6 +52,7 @@ struct MainView: View {
     }
     
     private func runAllCommands() {
+        logger.notice("📝 -> Starting running commands")
         isRunning = true
         CommandRunner(commands: commands)
             .run { isRunning = false }
