@@ -1,11 +1,11 @@
 //
-//  📝MainView.swift
+//  📝CommandsView.swift
 //  🗄️AppRunner
 //
-//  Created🗜️ by Yurii Boiko👨‍💻 on 24.11.2020🗓️.
+//  Created🗜️ by Yurii Boiko👨‍💻 on 26.01.2021🗓️.
 //
 //
-//  Copyright (c) 2020 Yurii Boiko
+//  Copyright (c) 2021 Yurii Boiko
 //  
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,37 +28,42 @@
 import SwiftUI
 import Combine
 import os
-
-struct MainView: View {
-    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "\(MainView.self)")
+     
+struct CommandsView: View {
+    @State private var isRunning = false
+    @State private var commands = Command.standartList
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "\(CommandsView.self)")
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("AppRunner")
-                    .font(.largeTitle)
-                    .padding()
-                Text("Lets you run lots of great stuff for app development")
-                    .font(.body)
-                    .padding()
-                
-                NavigationLink(destination: CommandsView()) {
-                    Text("Commands")
-                        .padding(.trailing)
-                }
-                
-                NavigationLink(destination: HeatUpView()) {
-                    Text("Heat up!")
-                        .padding(.trailing)
-                }
+        VStack {
+            Text("Het Up This Mac")
+                .font(.largeTitle)
+                .padding()
+            
+            Button(action: { runAllCommands() }) {
+                Text("Commands!")
             }
-            .navigationTitle("Main")
+            .disabled(isRunning)
+            .padding(.trailing)
+            
+            Button(action: { }) {
+                Text("Stop!")
+            }
+            .padding(.trailing)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private func runAllCommands() {
+        logger.notice("📝 -> Starting running commands")
+        isRunning = true
+        CommandRunner(commands: commands)
+            .run { isRunning = false }
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct CommandsView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        CommandsView()
     }
 }

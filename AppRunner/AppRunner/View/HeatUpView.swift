@@ -1,11 +1,11 @@
 //
-//  📝Command.swift
+//  📝HeatUpView.swift
 //  🗄️AppRunner
 //
-//  Created🗜️ by Yurii Boiko👨‍💻 on 30.11.2020🗓️.
+//  Created🗜️ by Yurii Boiko👨‍💻 on 26.01.2021🗓️.
 //
 //
-//  Copyright (c) 2020 Yurii Boiko
+//  Copyright (c) 2021 Yurii Boiko
 //  
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,43 +24,31 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-     
 
-import Foundation
+import SwiftUI
+import Combine
+import os
 
-struct Command {
-    let path: String
-    let shouldExecute: Bool
-}
-
-extension Command {
-    static var logStart: Self {
-        Command(path: "LogStart", shouldExecute: true)
-    }
+struct HeatUpView: View {
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "\(HeatUpView.self)")
     
-    static var logEnd: Self {
-        Command(path: "LogEnd", shouldExecute: true)
-    }
-    
-    static var killXcode: Self {
-        Command(path: "KillXcode", shouldExecute: true)
-    }
-    
-    static var openXcode: Self {
-        Command(path: "OpenXcode", shouldExecute: true)
-    }
-    
-    static var clearDerivedData: Self {
-        Command(path: "ClearDerivedData", shouldExecute: true)
-    }
-    
-    static var restartUSBDeamon: Self {
-        Command(path: "RestartUSBDeamon", shouldExecute: true)
+    var body: some View {
+        VStack {
+            Text("Het Up This Mac")
+                .font(.largeTitle)
+                .padding()
+            
+            Button(action: { }) {
+                Text("Stop!")
+            }
+            .padding(.trailing)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
-extension Command {
-    static var standartList: [Command] {
-        [logStart, killXcode, clearDerivedData, restartUSBDeamon, openXcode, logEnd]
+struct HeatUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        HeatUpView()
     }
 }

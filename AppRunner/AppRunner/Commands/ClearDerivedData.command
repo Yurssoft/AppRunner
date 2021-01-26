@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "*********************************"
-echo "Started deleting DerivedData"
+echo "Started Deleting DerivedData"
 rm -rf ~/Library/Developer/Xcode/DerivedData
 echo "DerivedData Has Been Deleted"
 echo "*********************************"

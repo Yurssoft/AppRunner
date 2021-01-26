@@ -14,12 +14,14 @@
 		500FBC6C2574E45D00DB8098 /* OpenXcode.command in Resources */ = {isa = PBXBuildFile; fileRef = 500FBC6B2574E45D00DB8098 /* OpenXcode.command */; };
 		504A20912574E7BF005FEEBE /* LogStart.command in Resources */ = {isa = PBXBuildFile; fileRef = 504A208F2574E7BF005FEEBE /* LogStart.command */; };
 		504A20922574E7BF005FEEBE /* LogEnd.command in Resources */ = {isa = PBXBuildFile; fileRef = 504A20902574E7BF005FEEBE /* LogEnd.command */; };
+		5070B4C125BFE1E300870836 /* CommandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070B4C025BFE1E300870836 /* CommandsView.swift */; };
 		50781EF3256D89B90010864E /* AppRunnerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50781EF2256D89B90010864E /* AppRunnerAppDelegate.swift */; };
 		50781EF7256D8FAC0010864E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50781EF6256D8FAC0010864E /* MainView.swift */; };
-		50781EFC256D99DE0010864E /* RunScript.command in Resources */ = {isa = PBXBuildFile; fileRef = 50781EFB256D99DE0010864E /* RunScript.command */; };
 		50AF3064256D7E0100AC431E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AF3063256D7E0100AC431E /* Assets.xcassets */; };
 		50AF3067256D7E0100AC431E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AF3066256D7E0100AC431E /* Preview Assets.xcassets */; };
 		50AF306A256D7E0100AC431E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AF3068256D7E0100AC431E /* Main.storyboard */; };
+		50B5250925B5596C00822474 /* RestartUSBDeamon.command in Resources */ = {isa = PBXBuildFile; fileRef = 50B5250825B5596C00822474 /* RestartUSBDeamon.command */; };
+		50D68A4E25BFDEC000408E9B /* HeatUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D68A4D25BFDEC000408E9B /* HeatUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,15 +32,17 @@
 		500FBC6B2574E45D00DB8098 /* OpenXcode.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = OpenXcode.command; sourceTree = "<group>"; };
 		504A208F2574E7BF005FEEBE /* LogStart.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = LogStart.command; sourceTree = "<group>"; };
 		504A20902574E7BF005FEEBE /* LogEnd.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = LogEnd.command; sourceTree = "<group>"; };
+		5070B4C025BFE1E300870836 /* CommandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsView.swift; sourceTree = "<group>"; };
 		50781EF2256D89B90010864E /* AppRunnerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRunnerAppDelegate.swift; sourceTree = "<group>"; };
 		50781EF6256D8FAC0010864E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		50781EFB256D99DE0010864E /* RunScript.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunScript.command; sourceTree = "<group>"; };
 		50AF305C256D7E0100AC431E /* AppRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AF3063256D7E0100AC431E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50AF3066256D7E0100AC431E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50AF3069256D7E0100AC431E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50AF306B256D7E0100AC431E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50AF306C256D7E0100AC431E /* AppRunner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppRunner.entitlements; sourceTree = "<group>"; };
+		50B5250825B5596C00822474 /* RestartUSBDeamon.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RestartUSBDeamon.command; sourceTree = "<group>"; };
+		50D68A4D25BFDEC000408E9B /* HeatUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +59,12 @@
 		50A5F5D9258485A5009B2572 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				50B5250825B5596C00822474 /* RestartUSBDeamon.command */,
 				504A20902574E7BF005FEEBE /* LogEnd.command */,
 				504A208F2574E7BF005FEEBE /* LogStart.command */,
 				500FBC672574E41900DB8098 /* ClearDerivedData.command */,
 				500FBC632574E30100DB8098 /* KillXcode.command */,
 				500FBC6B2574E45D00DB8098 /* OpenXcode.command */,
-				50781EFB256D99DE0010864E /* RunScript.command */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -69,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				50781EF6256D8FAC0010864E /* MainView.swift */,
+				50D68A4D25BFDEC000408E9B /* HeatUpView.swift */,
+				5070B4C025BFE1E300870836 /* CommandsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,10 +202,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50781EFC256D99DE0010864E /* RunScript.command in Resources */,
 				50AF306A256D7E0100AC431E /* Main.storyboard in Resources */,
 				50AF3067256D7E0100AC431E /* Preview Assets.xcassets in Resources */,
 				504A20922574E7BF005FEEBE /* LogEnd.command in Resources */,
+				50B5250925B5596C00822474 /* RestartUSBDeamon.command in Resources */,
 				50AF3064256D7E0100AC431E /* Assets.xcassets in Resources */,
 				500FBC642574E30100DB8098 /* KillXcode.command in Resources */,
 				504A20912574E7BF005FEEBE /* LogStart.command in Resources */,
@@ -215,9 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D68A4E25BFDEC000408E9B /* HeatUpView.swift in Sources */,
 				50781EF3256D89B90010864E /* AppRunnerAppDelegate.swift in Sources */,
 				500FBC5E2574E12500DB8098 /* CommandRunner.swift in Sources */,
 				50781EF7256D8FAC0010864E /* MainView.swift in Sources */,
+				5070B4C125BFE1E300870836 /* CommandsView.swift in Sources */,
 				500FBC612574E22100DB8098 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
